@@ -10,7 +10,7 @@ import Layout from "../components/Layout";
 export default function Home() {
   return (
     <div className="">
-      <Layout>
+      <Layout name="Accueil">
         <h1 className={styles.title}>Bienvenue sur mon Portfolio</h1>
 
         <Image

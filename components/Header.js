@@ -1,8 +1,9 @@
 import Link from "next/link";
 import next from "next";
 import styles from "../styles/Home.module.css";
+import Head from "next/head";
 
-export default function Header() {
+export default function Header({ name }) {
   return (
     <div className={styles.headerDiv}>
       <ul className={styles.ul}>
