@@ -1,12 +1,24 @@
+import next from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import myImage from "/public/images/myImage.jpeg";
+import Link from "next/link";
+import Project from "./project";
 
 export default function Home() {
   return (
     <div className="">
       <h1 className={styles.title}>Bienvenue sur mon Portfolio</h1>
+
+      <ul>
+        <li>
+          <Link href="/project">
+            <a>Mes réalisations</a>
+          </Link>
+        </li>
+      </ul>
+
       <Image
         src={myImage}
         // height="150px"
