@@ -7,11 +7,6 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
 
-  const HandleSubmit = (e) => {
-    e.preventDefault(),
-      console.log(email, message),
-      alert("Merci de nous recontacter");
-  };
   return (
     <div className={styles.page}>
       <Layout name="Me contacter">
@@ -22,13 +17,14 @@ export default function Contact() {
             onSubmit={(e) => {
               e.preventDefault();
               axios
-                .post("http://localhost:3000/api/contactRequests", {
+                .post("/api/contactRequests", {
                   email,
                   message,
                 })
 
                 .then((result) => {
-                  if (result.status === 200) setEmail("");
+                  alert("Merci de nous recontacter");
+                  setEmail("");
                   setMessage("");
                 });
             }}
@@ -59,11 +55,7 @@ export default function Contact() {
                 }}
               />
             </label>
-            <button
-              className={styles.button}
-              type="button"
-              onClick={HandleSubmit}
-            >
+            <button className={styles.button} type="submit">
               Valider
             </button>
           </form>
