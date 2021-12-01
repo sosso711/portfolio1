@@ -9,21 +9,21 @@ export default function Header({ name }) {
       <ul className={styles.ul}>
         <li className={styles.li}>
           <Link href="/">
-            <a className={styles.button} layout="responsive">
+            <a className={styles.buttons} layout="responsive">
               Accueil
             </a>
           </Link>
         </li>
         <li className={styles.li}>
           <Link href="/contact">
-            <a className={styles.button} layout="responsive">
+            <a className={styles.buttons} layout="responsive">
               Mes contacts
             </a>
           </Link>
         </li>
         <li className={styles.li}>
           <Link href="/project">
-            <a className={styles.button} layout="responsive">
+            <a className={styles.buttons} layout="responsive">
               Mes réalisations
             </a>
           </Link>
