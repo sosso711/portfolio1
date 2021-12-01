@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
 import styles from "../styles/Home.module.css";
+import axios from "axios";
 
 export default function Contact() {
   const [name, setName] = useState("");
