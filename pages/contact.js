@@ -4,37 +4,35 @@ import styles from "../styles/Home.module.css";
 import axios from "axios";
 
 export default function Contact() {
-  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const HandleSubmit = (e) => {
+    e.preventDefault(),
+      console.log(email, message),
+      alert("Merci de nous recontacter");
   };
-  const handleClick = (e) => {
-    e.preventDefault();
-  };
-
   return (
     <div className={styles.page}>
       <Layout name="Me contacter">
         <div className={styles.contact}>
           <h1>Me contacter</h1>
-        </div>
-        <div>
-          <form className={styles.container} onSubmit={handleSubmit}>
-            <label className={styles.label}>
-              {" "}
-              Votre Nom
-              <input
-                className={styles.input}
-                value={name}
-                type="text"
-                required
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-              />
-            </label>
+          <form
+            className={styles.container}
+            onSubmit={(e) => {
+              e.preventDefault();
+              axios
+                .post("http://localhost:3000/api/contactRequests", {
+                  email,
+                  message,
+                })
+
+                .then((result) => {
+                  if (result.status === 200) setEmail("");
+                  setMessage("");
+                });
+            }}
+          >
             <label className={styles.label}>
               {" "}
               Votre Email
@@ -42,22 +40,35 @@ export default function Contact() {
                 className={styles.input}
                 value={email}
                 type="email"
-                required
+                required="required"
                 onChange={(e) => {
                   setEmail(e.target.value);
+                }}
+              />
+            </label>
+            <label className={styles.label}>
+              {" "}
+              Votre Message
+              <input
+                className={styles.message}
+                value={message}
+                type="text"
+                required="required"
+                onChange={(e) => {
+                  setMessage(e.target.value);
                 }}
               />
             </label>
             <button
               className={styles.button}
               type="button"
-              onClick={(e) => e.preventDefault(console.log(email, name))}
+              onClick={HandleSubmit}
             >
               Valider
             </button>
           </form>
         </div>
-      </Layout>{" "}
+      </Layout>
     </div>
   );
 }

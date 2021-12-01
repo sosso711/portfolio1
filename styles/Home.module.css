@@ -89,3 +89,9 @@
   font-weight: 1000;
   border-radius: 15px;
 }
+.message {
+  margin: 15px;
+  height: 50px;
+  width: 200px;
+  border-radius: 10px;
+}
