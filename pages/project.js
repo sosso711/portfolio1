@@ -2,6 +2,7 @@ import next from "next";
 import Layout from "../components/Layout";
 import { getProjects } from "/models/project";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 // import Image from "next/image";
 
 export default function Project({ projects }) {
@@ -12,16 +13,18 @@ export default function Project({ projects }) {
         <ul className={styles.projectdiv}>
           {projects.map((data) => {
             return (
-              <li className={styles.projects}>
-                <h2>{data.title}</h2>
-                <img
-                  src={data.mainPictureUrl}
-                  width="250px"
-                  height="auto"
-                  layout="responsive"
-                />
-                <p>{data.description}</p>
-              </li>
+              <Link>
+                <li className={styles.projects}>
+                  <h2 className={styles.projecth2}>{data.title}</h2>
+                  <img
+                    src={data.mainPictureUrl}
+                    width="100%"
+                    height="100%"
+                    layout="responsive"
+                  />
+                  <p>{data.description}</p>
+                </li>
+              </Link>
             );
           })}
         </ul>

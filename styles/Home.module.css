@@ -114,8 +114,9 @@
   flex-direction: column;
   align-items: center;
   border-radius: 20px;
+  border: 1px solid black;
 }
 
-/*.projecth2 {
-  text-align: center;
-}*/
+.projecth2 {
+  margin: 10px;
+}
