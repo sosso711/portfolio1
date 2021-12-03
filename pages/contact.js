@@ -2,8 +2,6 @@ import { useState } from "react";
 import Layout from "../components/Layout";
 import styles from "../styles/Home.module.css";
 import axios from "axios";
-import Image from "next/image";
-import myImage from "/public/images/myImage.jpeg";
 
 export default function Contact() {
   const [message, setMessage] = useState("");
@@ -14,7 +12,7 @@ export default function Contact() {
       <Layout name="Me contacter">
         <h1 className={styles.title}>Me contacter</h1>
         <div className={styles.contact}>
-        <form
+          <form
             className={styles.container}
             onSubmit={(e) => {
               e.preventDefault();
@@ -57,7 +55,10 @@ export default function Contact() {
                 }}
               />
             </label>
-            <button className={styles.button} type="submit">
+            <button
+              className={styles.button}
+              type="submit" /*onClick={sendMail}*/
+            >
               Valider
             </button>
           </form>
