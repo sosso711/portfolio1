@@ -1,4 +1,3 @@
-require(".env.local").config();
 const mysql = require("mysql2");
 
 const connection = mysql.createConnection({
@@ -11,4 +10,4 @@ const connection = mysql.createConnection({
   decimalNumbers: true,
 });
 
-module.exports = connection;
+export default connection;
