@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import { getProjects } from "/models/project";
 import styles from "../styles/Home.module.css";
 // import Image from "next/image";
+import Link from "next/link";
 
 export default function Project({ projects }) {
   return (
@@ -12,16 +13,20 @@ export default function Project({ projects }) {
         <ul className={styles.projectdiv}>
           {projects.map((data) => {
             return (
-              <li className={styles.projects}>Mes réalisations</h1>
-                <h2>{data.title}</h2>
-                <img
-                  src={data.mainPictureUrl}
-                  width="250px"
-                  height="auto"
-                  layout="responsive"
-                />
-                <p>{data.description}</p>
-              </li>
+              <Link href={`/projets/${data.id}`}>
+                <a>
+                  <li className={styles.projects}>
+                    <h2 className={styles.projecth2}>{data.title}</h2>
+                    <img
+                      src={data.mainPictureUrl}
+                      width="100%"
+                      height="100%"
+                      layout="responsive"
+                    />
+                    <p>{data.description}</p>
+                  </li>
+                </a>
+              </Link>
             );
           })}
         </ul>
@@ -37,3 +42,7 @@ export async function getStaticProps() {
     },
   };
 }
+
+/* export async function getStaticPaths() {
+  const res = await fetch('./oneProjects')
+  const posts = await res.json() */

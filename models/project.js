@@ -9,11 +9,11 @@ export async function getProjects() {
     });
 }
 
-export async function getOneProject() {
+export async function getOneProject(id) {
   return connection
     .promise()
     .query("SELECT * FROM Projects WHERE id=?", [id])
     .then((result) => {
-      return result[0];
+      return result[0][0];
     });
 }

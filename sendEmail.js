@@ -1,6 +1,6 @@
 const emailer = require("./mailer");
 
-emailer.sendMail(
+mailer.sendMail(
   {
     from: "arthaud14@free.fr",
     to: "arthaud.primevert@gmail.com",
