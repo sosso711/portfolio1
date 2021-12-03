@@ -2,6 +2,7 @@ import { useState } from "react";
 import Layout from "../components/Layout";
 import styles from "../styles/Home.module.css";
 import axios from "axios";
+import sendEmail from "./sendEmail";
 
 export default function Contact() {
   const [message, setMessage] = useState("");
@@ -57,7 +58,7 @@ export default function Contact() {
             </label>
             <button
               className={styles.button}
-              type="submit" /*onClick={sendMail}*/
+              type="submit" onclik={sendEmail}
             >
               Valider
             </button>
