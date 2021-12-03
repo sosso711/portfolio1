@@ -12,7 +12,7 @@ export default function Project({ projects }) {
         <ul className={styles.projectdiv}>
           {projects.map((data) => {
             return (
-              <li className={styles.projects}>
+              <li className={styles.projects}>Mes réalisations</h1>
                 <h2>{data.title}</h2>
                 <img
                   src={data.mainPictureUrl}
