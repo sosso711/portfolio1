@@ -13,7 +13,7 @@ export default function Project({ projects }) {
         <ul className={styles.projectdiv}>
           {projects.map((data) => {
             return (
-              <Link>
+              <Link href="/projects">
                 <li className={styles.projects}>
                   <h2 className={styles.projecth2}>{data.title}</h2>
                   <img
