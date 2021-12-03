@@ -1,10 +1,13 @@
 import next from "next";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <div className={styles.footer}>
-      <h2>Mes Réseaux Sociaux</h2>
+      <Link href="/admin/projets">
+        <a>Admin</a>
+      </Link>
     </div>
   );
 }

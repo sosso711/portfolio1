@@ -1,3 +1,4 @@
+import axios from "axios";
 import connection from "../db-config";
 
 export async function getProjects() {
