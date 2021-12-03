@@ -2,6 +2,7 @@
   font-size: 40px;
   text-align: center;
   margin: 20px;
+  width: 100%;
 }
 .description {
   font-size: 20px;
@@ -52,23 +53,23 @@
   width: 60%;
   height: 500px;
   border-radius: 5px;
-  background-image: url("/images/32504439037_bacb8fcdf6_c.jpg");
-  opacity: 0.7;
-  margin-top: 150px;
-  margin-left: 20%;
-  padding-top: 200px;
+  background-image: linear-gradient(rgb(240,248,255, 0.6)),url("/images/32504439037_bacb8fcdf6_c.jpg");
+  margin-top: 10px;
+  padding-top: 150px;
+  
 }
 .label {
   margin: 10px;
-  z-index: 5;
   font-weight: 900;
   color: black;
 }
+
 .input {
   margin: 15px;
   height: 30px;
   width: 200px;
   border-radius: 10px;
+  margin-left: 60px;
 }
 .contact {
   font-size: 25px;
